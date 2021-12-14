@@ -17,7 +17,7 @@ function CreateUser({ setLoggedIn, setUserInformation }) {
 
           user
             .updateProfile({
-              displayName: username,
+              displayName,
             })
             .then(function () {
               setLoggedIn(true);

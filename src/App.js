@@ -24,7 +24,7 @@ import Header from "./components/Header";
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [setErrors, userInformation, setUserInformation] = useState({});
+  const [userInformation, setUserInformation] = useState({});
   const [appInitialized, setAppInitialized] = useState(false);
 
   useEffect(() => {
@@ -62,67 +62,69 @@ function App() {
 
   if (loading || !appInitialized) return null;
 
-  function App() {
-    return (
-      <div>
-        <Header logout={logout} loggedIn={loggedIn} />
-        <Router>
-          <Routes>
-            <Route
-              path="/login"
-              element={
-                !loggedIn ? (
-                  <Login
-                    setErrors={setErrors}
-                    setLoggedIn={setLoggedIn}
-                    setUserInformation={setUserInformation}
-                  />
-                ) : (
-                  <Navigate to="/" />
-                )
-              }
-            />
-            <Route
-              path="/create-user"
-              element={
-                !loggedIn ? (
-                  <CreateUser
-                    setErrors={setErrors}
-                    setLoggedIn={setLoggedIn}
-                    setUserInformation={setUserInformation}
-                  />
-                ) : (
-                  <Navigate to="/" />
-                )
-              }
-            />
-            <Route
-              path="/add-post"
-              element={loggedIn ? <AddPost /> : <Navigate to="/login" />}
-            />
-            <Route
-              path="/post/:id"
-              element={loggedIn ? <Post /> : <Navigate to="/login" />}
-            />
-            <Route
-              path="/user/:id"
-              element={
-                loggedIn ? (
-                  <UserProfile userInformation={userInformation} />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route
-              path="/"
-              element={loggedIn ? <Dashboard /> : <Navigate to="/login" />}
-            />
-          </Routes>
-        </Router>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Header logout={logout} loggedIn={loggedIn} />
+      <Router>
+        <Routes>
+          <Route
+            path="/login"
+            element={
+              !loggedIn ? (
+                <Login
+                  setLoggedIn={setLoggedIn}
+                  setUserInformation={setUserInformation}
+                />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+          <Route
+            path="/create-user"
+            element={
+              !loggedIn ? (
+                <CreateUser
+                  setLoggedIn={setLoggedIn}
+                  setUserInformation={setUserInformation}
+                />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+          <Route
+            path="/add-post"
+            element={
+              loggedIn ? (
+                <AddPost userInformation={userInformation} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/post/:id"
+            element={loggedIn ? <Post /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/user/:id"
+            element={
+              loggedIn ? (
+                <UserProfile userInformation={userInformation} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/"
+            element={loggedIn ? <Dashboard /> : <Navigate to="/login" />}
+          />
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
