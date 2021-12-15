@@ -12,11 +12,12 @@ function AddPost({ userInformation }) {
     e.preventDefault();
 
     const postMessage = e.currentTarget.postMessage.value;
-
     const userName = userInformation.displayName;
-    const userId = userInformation.uid;
+    const userID = userInformation.uid;
 
-    const url = `${baseUrl}/create?postMessage=${postMessage}&userName=${userName}&userID=${userId}`;
+    console.log({ postMessage });
+
+    const url = `${baseUrl}/create?postMessage=${postMessage}&userName=${userName}&userID=${userID}`;
     axios
       .get(url)
       .then(function (response) {
@@ -31,7 +32,7 @@ function AddPost({ userInformation }) {
   return (
     <div className="PageWrapper">
       <h1>Add Post</h1>
-      <AddPostForm />
+      <AddPostForm submitPost={submitPost} />
     </div>
   );
 }

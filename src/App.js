@@ -64,7 +64,11 @@ function App() {
 
   return (
     <div>
-      <Header logout={logout} loggedIn={loggedIn} />
+      <Header
+        logout={logout}
+        loggedIn={loggedIn}
+        userInformation={userInformation}
+      />
       <Router>
         <Routes>
           <Route

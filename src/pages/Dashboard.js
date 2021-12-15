@@ -23,8 +23,8 @@ function Dashboard() {
   return (
     <div className="PageWrapper">
       <h1>Dashboard</h1>
-      {posts.map((posts, i) => (
-        <PostCard posts={posts} key={i} />
+      {posts.map((post, i) => (
+        <PostCard post={post} key={i} />
       ))}
     </div>
   );
