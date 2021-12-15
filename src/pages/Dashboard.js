@@ -3,7 +3,7 @@ import axios from "axios";
 //Components
 import PostCard from "../components/PostCard";
 
-const url = `http://localhost:4000`;
+const url = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
 
 function Dashboard() {
   const [posts, setPosts] = useState([]);
@@ -22,10 +22,12 @@ function Dashboard() {
 
   return (
     <div className="PageWrapper">
-      <h1>Dashboard</h1>
-      {posts.map((post, i) => (
-        <PostCard post={post} key={i} />
-      ))}
+      <div className="ContentWrapper">
+        <h1>Dashboard</h1>
+        {posts.map((post, i) => (
+          <PostCard post={post} key={i} />
+        ))}
+      </div>
     </div>
   );
 }

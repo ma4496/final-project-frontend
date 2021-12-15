@@ -21,6 +21,8 @@
   font-weight: bold;
   font-size: 14px;
   margin: 0 5px;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
 }
 
 .LogoutButton {
@@ -33,4 +35,19 @@
   border-radius: 10px;
   background-color: #e1faeb;
   border-color: #e1faeb;
+  text-decoration: none;
+  text-decoration-line: none;
+}
+
+.ContentWrapper {
+  background-color: #e1faeb;
+  border-radius: 15px;
+}
+
+.CreateUserButton {
+  margin-left: 20px;
+}
+
+.LoginFormButton {
+  margin-left: 20px;
 }

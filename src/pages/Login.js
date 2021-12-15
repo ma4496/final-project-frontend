@@ -30,7 +30,7 @@ function Login({ setErrors, setLoggedIn, setUserInformation }) {
           const errorCode = error.code;
           const errorMessage = error.message;
           console.warn({ error, errorCode, errorMessage });
-          setErrors(errorMessage);
+          //setErrors(errorMessage);
         });
     },
     [setErrors, setLoggedIn, setUserInformation]

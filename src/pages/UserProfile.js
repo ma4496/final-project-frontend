@@ -25,12 +25,15 @@ function UserProfile({ userInformation }) {
 
   return (
     <div className="PageWrapper">
-      <h1>Username:</h1>
-      <p> {userInformation.email} </p>
-      <h2>Posts</h2>
-      {userPosts.map((post, i) => (
-        <PostCard post={post} key={i} />
-      ))}
+      <div className="ContentWrapper">
+        <h1>Profile</h1>
+        <h2>Username:</h2>
+        <p> {userInformation.email} </p>
+        <h2>Posts</h2>
+        {userPosts.map((post, i) => (
+          <PostCard post={post} key={i} />
+        ))}
+      </div>
     </div>
   );
 }
