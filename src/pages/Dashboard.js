@@ -3,14 +3,15 @@ import axios from "axios";
 //Components
 import PostCard from "../components/PostCard";
 
-const url = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
+const url =
+  `https://evening-ocean-32386.herokuapp.com` || `http://localhost:4000`;
 
 function Dashboard() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     axios
-      .get(url)
+      .get(`https://evening-ocean-32386.herokuapp.com/`)
       .then(function (response) {
         console.log({ response });
         setPosts(response.data);

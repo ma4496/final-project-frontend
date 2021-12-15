@@ -3,7 +3,8 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import PostCard from "../components/PostCard";
 
-const url = `http://localhost:4000`;
+const url =
+  `https://evening-ocean-32386.herokuapp.com` || `http://localhost:4000`;
 
 function UserProfile({ userInformation }) {
   console.log(userInformation);

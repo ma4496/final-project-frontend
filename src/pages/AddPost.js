@@ -3,7 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import AddPostForm from "../components/AddPostForm";
 
-const baseUrl = process.env.REACT_APP_BACKEND_URL || `http://localhost:4000`;
+const baseUrl =
+  `https://evening-ocean-32386.herokuapp.com` || `http://localhost:4000`;
 
 function AddPost({ userInformation }) {
   const navigate = useNavigate();
