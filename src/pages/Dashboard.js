@@ -11,7 +11,7 @@ function Dashboard() {
 
   useEffect(() => {
     axios
-      .get(`https://evening-ocean-32386.herokuapp.com/`)
+      .get(url)
       .then(function (response) {
         console.log({ response });
         setPosts(response.data);
